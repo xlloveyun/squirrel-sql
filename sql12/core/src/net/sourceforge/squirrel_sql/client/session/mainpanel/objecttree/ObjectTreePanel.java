@@ -200,13 +200,12 @@ public class ObjectTreePanel extends JPanel implements IObjectTreeAPI
 
          // Register tabs to display in the details panel for catalog nodes.
          _addDetailTab(DatabaseObjectType.CATALOG, new DatabaseObjectInfoTab());
-
          // Register tabs to display in the details panel for schema nodes.
          _addDetailTab(DatabaseObjectType.SCHEMA, new DatabaseObjectInfoTab());
 
          _addDetailTabForTableLikeObjects(DatabaseObjectType.TABLE);
          _addDetailTabForTableLikeObjects(DatabaseObjectType.VIEW);
-
+         
          // Register tabs to display in the details panel for procedure nodes.
          _addDetailTab(DatabaseObjectType.PROCEDURE, new DatabaseObjectInfoTab());
          _addDetailTab(DatabaseObjectType.PROCEDURE, new ProcedureColumnsTab());
@@ -1088,5 +1087,6 @@ public class ObjectTreePanel extends JPanel implements IObjectTreeAPI
                 }
             });            
         }
-    }
+   }
+    
 }

@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.swing.JButton;
 import javax.swing.JTabbedPane;
 
 import net.sourceforge.squirrel_sql.client.IApplication;
@@ -131,11 +132,15 @@ class ObjectTreeTabbedPane
                            firstTab.getComponent(), 
                            firstTab.getHint());
         }
-        
+		JButton btn = new JButton("X");
         tab.setSession(_app.getSessionManager().getSession(_sessionId));
         final String title = tab.getTitle();
         _tabPnl.addTab(title, null, tab.getComponent(), tab.getHint());
         _tabs.add(tab);
+        _tabPnl.setSelectedIndex(_tabPnl.getTabCount()-1);
+        if(title.equals("Create Table")){
+        	_tabPnl.setTabComponentAt(_tabPnl.getTabCount()-1,btn);
+        }
 	}
 
 	void selectCurrentTab()

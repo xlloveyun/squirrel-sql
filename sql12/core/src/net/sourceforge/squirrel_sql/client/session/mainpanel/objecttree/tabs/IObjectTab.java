@@ -29,6 +29,8 @@ import net.sourceforge.squirrel_sql.client.session.ISession;
  */
 public interface IObjectTab
 {
+	
+	
 	/**
 	 * Return the title for the tab.
 	 *
