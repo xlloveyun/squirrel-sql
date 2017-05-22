@@ -22,7 +22,7 @@ public class CreateTableAction extends SquirrelAction implements ISessionAction{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		session.getObjectTreeAPIOfActiveSessionWindow().addDetailTab(DatabaseObjectType.CATALOG, new CreateTableTab());
+		session.getObjectTreeAPIOfActiveSessionWindow().addDetailTab(DatabaseObjectType.SCHEMA, new CreateTableTab());
 	}
 
 	@Override

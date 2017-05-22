@@ -32,7 +32,7 @@ import javax.swing.*;
  *
  * @author  Gerd Wagner
  */
-class FormatSQLCommand implements ICommand
+public class FormatSQLCommand implements ICommand
 {
 	private final ISession _session;
    private ISQLPanelAPI _panel;

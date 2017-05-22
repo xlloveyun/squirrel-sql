@@ -1,4 +1,6 @@
 package net.sourceforge.squirrel_sql.client.session.mainpanel.objecttree;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 /*
  * Copyright (C) 2002-2003 Colin Bell
  * colbell@users.sourceforge.net
@@ -21,11 +23,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import javax.swing.JButton;
 import javax.swing.JTabbedPane;
 
 import net.sourceforge.squirrel_sql.client.IApplication;
 import net.sourceforge.squirrel_sql.client.gui.builders.UIFactory;
+import net.sourceforge.squirrel_sql.client.gui.desktopcontainer.docktabdesktop.ButtonTabComponent;
 import net.sourceforge.squirrel_sql.client.session.ISession;
 import net.sourceforge.squirrel_sql.client.session.mainpanel.objecttree.tabs.IObjectTab;
 import net.sourceforge.squirrel_sql.fw.id.IIdentifier;
@@ -132,7 +134,14 @@ class ObjectTreeTabbedPane
                            firstTab.getComponent(), 
                            firstTab.getHint());
         }
-		JButton btn = new JButton("X");
+		ButtonTabComponent btn = new ButtonTabComponent(_app, _tabPnl, "Create Table", null);
+		btn.getClosebutton().addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+//				_tabPnl.remove(_tabPnl.getSelectedIndex());
+				btn.getClosebutton();
+			}
+		});
         tab.setSession(_app.getSessionManager().getSession(_sessionId));
         final String title = tab.getTitle();
         _tabPnl.addTab(title, null, tab.getComponent(), tab.getHint());

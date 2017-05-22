@@ -39,7 +39,7 @@ public class DatabaseTypesDataSet implements IDataSet
 
 	private DataSetDefinition _dataSetDefinition;
 
-	private List<Object[]> _allData = new ArrayList<Object[]>();
+	public List<Object[]> _allData = new ArrayList<Object[]>();
 
 	private int _currentRowIdx = -1;
 
@@ -284,7 +284,7 @@ public class DatabaseTypesDataSet implements IDataSet
 	 *           the ResultSet to read from.
 	 * @throws DataSetException
 	 */
-	private void setResultSet(ResultSet rs) throws DataSetException
+	public void setResultSet(ResultSet rs) throws DataSetException
 	{
 		if (rs == null) { return; }
 		try
