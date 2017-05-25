@@ -109,6 +109,8 @@ public class SquirrelResources extends Resources
 
       String DIR_GIF = "dir_obj";
       String FILE_GIF = "file_obj";
+      String ADD ="action.net.sourceforge.squirrel_sql.client.mainframe.action.CreateDriverAction";
+      String DELETE = "action.net.sourceforge.squirrel_sql.client.mainframe.action.DeleteAliasAction";
    }
 
 	public SquirrelResources(String rsrcBundleBaseName)

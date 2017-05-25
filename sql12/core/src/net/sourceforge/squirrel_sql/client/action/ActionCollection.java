@@ -67,6 +67,7 @@ import net.sourceforge.squirrel_sql.client.session.action.CopySqlAction;
 import net.sourceforge.squirrel_sql.client.session.action.CreateTableAction;
 import net.sourceforge.squirrel_sql.client.session.action.CutSqlAction;
 import net.sourceforge.squirrel_sql.client.session.action.DeleteSelectedTablesAction;
+import net.sourceforge.squirrel_sql.client.session.action.DropSelectedTablesAction;
 import net.sourceforge.squirrel_sql.client.session.action.DumpSessionAction;
 import net.sourceforge.squirrel_sql.client.session.action.EditWhereColsAction;
 import net.sourceforge.squirrel_sql.client.session.action.EscapeDateAction;
@@ -519,7 +520,7 @@ public class ActionCollection
 		add(new CopyQualifiedObjectNameAction(_app));
 		add(new CopySimpleObjectNameAction(_app));
 		add(new DisplayPluginSummaryAction(_app));
-		//add(new DropSelectedTablesAction(_app));
+		add(new DropSelectedTablesAction(_app));
 		add(new DeleteSelectedTablesAction(_app));
 		add(new ShowTableReferencesAction(_app));
 		add(new DumpApplicationAction(_app));
@@ -535,8 +536,8 @@ public class ActionCollection
 		add(new FileAppendAction(_app));
 		add(new FileSaveAction(_app));
 		add(new FileSaveAsAction(_app));
-      add(new FileCloseAction(_app));
-      add(new FilePrintAction(_app));
+		add(new FileCloseAction(_app));
+		add(new FilePrintAction(_app));
 		add(new GlobalPreferencesAction(_app));
 		add(new GotoNextResultsTabAction(_app));
 		add(new GotoPreviousResultsTabAction(_app));

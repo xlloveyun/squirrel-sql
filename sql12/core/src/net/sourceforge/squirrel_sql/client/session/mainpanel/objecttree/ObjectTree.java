@@ -161,6 +161,7 @@ class ObjectTree extends JTree
       addToPopup(DatabaseObjectType.VIEW, actions.get(SQLFilterAction.class));
 
       addToPopup(DatabaseObjectType.TABLE, actions.get(DeleteSelectedTablesAction.class));
+      addToPopup(DatabaseObjectType.TABLE, actions.get(DropSelectedTablesAction.class));
       addToPopup(DatabaseObjectType.TABLE, actions.get(ShowTableReferencesAction.class));
       addToPopup(DatabaseObjectType.SCHEMA,actions.get(CreateTableAction.class));
 

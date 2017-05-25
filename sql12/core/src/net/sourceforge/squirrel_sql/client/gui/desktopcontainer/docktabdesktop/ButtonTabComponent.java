@@ -90,7 +90,7 @@ public class ButtonTabComponent extends JPanel {
 	}
 
 	// calculate the tab index of this tab component
-	private int getTabIndex() {
+	public int getTabIndex() {
 		for (int i = 0; i < _tabbedPane.getTabCount(); i++) {
 			if (this.equals(_tabbedPane.getTabComponentAt(i))) {
 				return i;

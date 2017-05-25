@@ -31,7 +31,7 @@ public class CreateTableTab extends BaseObjectTab{
 	public Component getComponent() {
 		String connectionName = _app.getSessionManager().getActiveSession().getTitle();
         String  schemaName=  _app.getSessionManager().getActiveSession().getObjectTreeAPIOfActiveSessionWindow().getSelectedDatabaseObjects()[0].getSimpleName();
-        CreateTableModal panel =new CreateTableModal(getSession(),connectionName,schemaName);
+        CreateTableModal panel =new CreateTableModal(_app,getSession(),connectionName,schemaName);
 		return panel.getTableComponent();
 	}
 

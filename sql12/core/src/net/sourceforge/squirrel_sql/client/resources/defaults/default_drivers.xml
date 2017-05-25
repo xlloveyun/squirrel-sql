@@ -3,7 +3,7 @@
 <Beans>
 
 	<Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
-        	<name>Trafci</name>
+        	<name>Trafodion Driver</name>
         	<driverClassName>org.trafodion.jdbc.t4.T4Driver</driverClassName>
         	<url>jdbc:t4jdbc://10.1.30.73:23400/:</url>
 		<usesClassPath>true</usesClassPath>

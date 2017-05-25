@@ -138,8 +138,7 @@ class ObjectTreeTabbedPane
 		btn.getClosebutton().addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				_tabPnl.remove(_tabPnl.getSelectedIndex());
-				btn.getClosebutton();
+				_tabPnl.remove(btn.getTabIndex());
 			}
 		});
         tab.setSession(_app.getSessionManager().getSession(_sessionId));

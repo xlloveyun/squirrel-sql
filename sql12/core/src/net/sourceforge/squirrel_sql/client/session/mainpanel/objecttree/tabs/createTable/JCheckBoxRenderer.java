@@ -35,8 +35,6 @@ public class JCheckBoxRenderer extends JPanel implements TableCellRenderer {
     	 }else{
     		 check_box.setSelected(false);
     	 }
-    	 if(column==5)
-       	  	table.setValueAt(value, row,column+1);
              return check_box; 
         }
      
