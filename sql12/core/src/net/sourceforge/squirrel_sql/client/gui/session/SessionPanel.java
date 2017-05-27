@@ -559,7 +559,6 @@ public class SessionPanel extends JPanel
          setFloatable(false);
          add(actions.get(SessionPropertiesAction.class));
          add(actions.get(RefreshSchemaInfoAction.class));
-         add(actions.get(CreateTableAction.class));
          addSeparator();
          add(actions.get(ExecuteSqlAction.class));
 			addSeparator();

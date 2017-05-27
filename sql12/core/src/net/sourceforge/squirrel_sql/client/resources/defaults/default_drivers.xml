@@ -7,22 +7,10 @@
         	<driverClassName>org.trafodion.jdbc.t4.T4Driver</driverClassName>
         	<url>jdbc:t4jdbc://10.1.30.73:23400/:</url>
 		<usesClassPath>true</usesClassPath>
-		<jarFileNames Indexed="true"/>
+		<jarFileNames Indexed="true" />
 		<identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
 			<string>-64</string>
 		</identifier>
 		<websiteUrl>jdbc:t4jdbc://10.1.30.73:24400/:</websiteUrl>
  	</Bean>
- 	
-	<Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
-		<identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
-			<string>-27</string>
-		</identifier>
-		<url>jdbc:mysql://&lt;hostname&gt;[,&lt;failoverhost&gt;][&lt;:3306&gt;]/&lt;dbname&gt;[?&lt;param1&gt;=&lt;value1&gt;][&amp;&lt;param2&gt;=&lt;value2&gt;]</url>
-		<usesClassPath>true</usesClassPath>
-		<jarFileNames Indexed="true"/>
-		<driverClassName>com.mysql.jdbc.Driver</driverClassName>
-		<name>MySQL Driver</name>
-		<websiteUrl>http://dev.mysql.com</websiteUrl>
-	</Bean>
 </Beans>
