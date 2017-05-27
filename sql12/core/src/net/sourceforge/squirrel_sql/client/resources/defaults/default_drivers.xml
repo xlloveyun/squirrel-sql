@@ -5,12 +5,16 @@
 	<Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
         	<name>Trafodion Driver</name>
         	<driverClassName>org.trafodion.jdbc.t4.T4Driver</driverClassName>
-        	<url>jdbc:t4jdbc://10.1.30.73:23400/:</url>
+        	<url>jdbc:t4jdbc://192.168.0.38:23400/:</url>
 		<usesClassPath>true</usesClassPath>
-		<jarFileNames Indexed="true" />
+		<jarFileNames Indexed="true">
+            <Bean Class="net.sourceforge.squirrel_sql.fw.util.beanwrapper.StringWrapper">
+                <string>jdbcT4-2.2.3.jar</string>
+            </Bean>
+        </jarFileNames>
 		<identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
 			<string>-64</string>
 		</identifier>
-		<websiteUrl>jdbc:t4jdbc://10.1.30.73:24400/:</websiteUrl>
+		<websiteUrl>jdbc:t4jdbc://192.168.0.38:24400/:</websiteUrl>
  	</Bean>
 </Beans>

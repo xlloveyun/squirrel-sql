@@ -165,7 +165,7 @@
         <!--<antcall target="doCompilePlugin"><param name="pluginName" value="firebirdmanager"/></antcall>-->
         <antcall target="doCompilePlugin"><param name="pluginName" value="greenplum"/></antcall>
         <antcall target="doCompilePlugin"><param name="pluginName" value="h2"/></antcall>
-        <antcall target="doCompilePlugin"><param name="pluginName" value="hibernate"/></antcall>
+        <!--<antcall target="doCompilePlugin"><param name="pluginName" value="hibernate"/></antcall>-->
         <antcall target="doCompilePlugin"><param name="pluginName" value="i18n"/></antcall>
         <antcall target="doCompilePlugin"><param name="pluginName" value="informix"/></antcall>
         <!--<antcall target="doCompilePlugin"><param name="pluginName" value="isqlj"/></antcall>-->

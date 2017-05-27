@@ -206,13 +206,13 @@
 			<file targetdir="$INSTALL_PATH/plugins" src="output/dist/plugins/h2" />
 		</pack>
 
-		<pack required="no" preselected="no" installGroups="OptionalPlugins" name="Optional Plugin - Hibernate ">
+<!-- 		<pack required="no" preselected="no" installGroups="OptionalPlugins" name="Optional Plugin - Hibernate ">
 			<description>
 				This optional plugin adds development support for Hibernate applications
          </description>
 			<file targetdir="$INSTALL_PATH/plugins" src="output/dist/plugins/hibernate.jar" />
 			<file targetdir="$INSTALL_PATH/plugins" src="output/dist/plugins/hibernate" />
-		</pack>
+		</pack> -->
 
 		<pack required="no" preselected="no" installGroups="OptionalPlugins" name="Optional Plugin - Informix ">
 			<description>

@@ -22,6 +22,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.sourceforge.squirrel_sql.client.util.ApplicationFiles;
 import net.sourceforge.squirrel_sql.fw.id.IIdentifier;
 import net.sourceforge.squirrel_sql.fw.persist.ValidationException;
 import net.sourceforge.squirrel_sql.fw.util.PropertyChangeReporter;
@@ -360,6 +361,11 @@ public class SQLDriver implements ISQLDriver, Cloneable, Serializable
 		{
 			for (int i = 0; i < value.length; ++i)
 			{
+				if(!value[i].getString().contains(":"))
+				{
+					ApplicationFiles _appFile = new ApplicationFiles();
+					value[i].setString(_appFile.getLibraryDirectory()+"\\"+value[i].getString());;
+				}
 				_jarFileNamesList.add(value[i].getString());
 			}
 		}

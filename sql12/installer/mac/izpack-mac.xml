@@ -236,7 +236,7 @@
 			<file targetdir="$INSTALL_PATH/Contents/Resources/Java/plugins" src="output/dist/plugins/firebird.jar" />
 			<file targetdir="$INSTALL_PATH/Contents/Resources/Java/plugins" src="output/dist/plugins/firebird" />
 		</pack>
-		<pack
+		<!-- <pack
 			required="no"
 			preselected="no"
 			installGroups="OptionalPlugins"
@@ -244,7 +244,7 @@
 			<description>This optional plugin provides tools for developing Hibernate applications</description>
 			<file targetdir="$INSTALL_PATH/Contents/Resources/Java/plugins" src="output/dist/plugins/hibernate.jar" />
 			<file targetdir="$INSTALL_PATH/Contents/Resources/Java/plugins" src="output/dist/plugins/hibernate" />
-		</pack>
+		</pack> -->
 		<pack
 			required="no"
 			preselected="no"
