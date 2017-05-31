@@ -30,8 +30,11 @@ import net.sourceforge.squirrel_sql.client.gui.builders.UIFactory;
 import net.sourceforge.squirrel_sql.client.gui.desktopcontainer.docktabdesktop.ButtonTabComponent;
 import net.sourceforge.squirrel_sql.client.session.ISession;
 import net.sourceforge.squirrel_sql.client.session.mainpanel.objecttree.tabs.IObjectTab;
+import net.sourceforge.squirrel_sql.client.session.mainpanel.objecttree.tabs.createtable.CreateTableModal;
 import net.sourceforge.squirrel_sql.fw.id.IIdentifier;
 import net.sourceforge.squirrel_sql.fw.sql.IDatabaseObjectInfo;
+import net.sourceforge.squirrel_sql.fw.util.StringManager;
+import net.sourceforge.squirrel_sql.fw.util.StringManagerFactory;
 import net.sourceforge.squirrel_sql.fw.util.log.ILogger;
 import net.sourceforge.squirrel_sql.fw.util.log.LoggerController;
 /**
@@ -46,6 +49,9 @@ class ObjectTreeTabbedPane
     /** Logger for this class. */
     private final static ILogger log = 
                       LoggerController.createLogger(ObjectTreeTabbedPane.class);
+    
+	 private static final StringManager s_stringMgr =
+		        StringManagerFactory.getStringManager(ObjectTreeTabbedPane.class);
     
 	/** Keys to client properties stored in the component. */
 	interface IClientPropertiesKeys
@@ -134,7 +140,7 @@ class ObjectTreeTabbedPane
                            firstTab.getComponent(), 
                            firstTab.getHint());
         }
-		ButtonTabComponent btn = new ButtonTabComponent(_app, _tabPnl, "Create Table", null);
+		ButtonTabComponent btn = new ButtonTabComponent(_app, _tabPnl, s_stringMgr.getString("ObjectTreeTabbedPane.CreateTable"), null);
 		btn.getClosebutton().addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -146,7 +152,7 @@ class ObjectTreeTabbedPane
         _tabPnl.addTab(title, null, tab.getComponent(), tab.getHint());
         _tabs.add(tab);
         _tabPnl.setSelectedIndex(_tabPnl.getTabCount()-1);
-        if(title.equals("Create Table")){
+        if(title.equals(s_stringMgr.getString("ObjectTreeTabbedPane.CreateTable"))){
         	_tabPnl.setTabComponentAt(_tabPnl.getTabCount()-1,btn);
         }
 	}

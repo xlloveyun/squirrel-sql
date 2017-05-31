@@ -324,7 +324,7 @@ class Application implements IApplication
 		String langCountryPair = prefs.getPreferredLocale();
 		if (StringUtils.isEmpty(langCountryPair))
 		{
-			langCountryPair = "en_US";
+			langCountryPair = "zh_CN";
 		}
 		String[] parts = langCountryPair.split("_");
 		if (parts.length == 2) { return new Locale(parts[0], parts[1]); }
