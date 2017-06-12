@@ -88,6 +88,7 @@ import net.sourceforge.squirrel_sql.client.session.SessionManager;
 import net.sourceforge.squirrel_sql.client.session.event.SessionAdapter;
 import net.sourceforge.squirrel_sql.client.session.event.SessionEvent;
 import net.sourceforge.squirrel_sql.client.session.properties.EditWhereColsSheet;
+import net.sourceforge.squirrel_sql.client.session.properties.ImportDataFromDBDialog;
 import net.sourceforge.squirrel_sql.client.session.properties.SessionPropertiesSheet;
 import net.sourceforge.squirrel_sql.client.session.sqlfilter.SQLFilterSheet;
 import net.sourceforge.squirrel_sql.fw.gui.GUIUtils;
@@ -619,6 +620,29 @@ public class WindowManager
 
 		return editWhereColsSheet;
 	}
+	
+	
+	public synchronized ImportDataFromDBDialog showImportDataFromDBDialog(IObjectTreeAPI tree,
+			IDatabaseObjectInfo objectInfo) {
+		if (tree == null) {
+			throw new IllegalArgumentException("IObjectTreeAPI == null");
+		}
+		if (objectInfo == null) {
+			throw new IllegalArgumentException("IDatabaseObjectInfo == null");
+		}
+
+		ISession session = tree.getSession();
+		ImportDataFromDBDialog importDataFromDBDialog = getImportDataFromDBDialog(session, objectInfo);
+		if (importDataFromDBDialog == null) {
+			importDataFromDBDialog = new ImportDataFromDBDialog(session, objectInfo);
+			_app.getMainFrame().addWidget(importDataFromDBDialog);
+			positionSheet(importDataFromDBDialog);
+		} else {
+			importDataFromDBDialog.moveToFront();
+		}
+
+		return importDataFromDBDialog;
+	}
 
 	public void moveToFront(final Window win)
 	{
@@ -878,6 +902,21 @@ public class WindowManager
       }
 		return null;
 	}
+	
+	
+	private ImportDataFromDBDialog getImportDataFromDBDialog(ISession session, IDatabaseObjectInfo objectInfo) {
+		ISessionWidget[] framesOfSession = _sessionWindows.getFramesOfSession(session.getIdentifier());
+		for (int i = 0; i < framesOfSession.length; i++) {
+			if (framesOfSession[i] instanceof ImportDataFromDBDialog) {
+				final ImportDataFromDBDialog sfs = (ImportDataFromDBDialog) framesOfSession[i];
+				if (objectInfo.equals(sfs.getDatabaseObjectInfo())) {
+					return sfs;
+				}
+			}
+		}
+		return null;
+	}
+	
 
 
 	private void positionSheet(SessionDialogWidget sfs)

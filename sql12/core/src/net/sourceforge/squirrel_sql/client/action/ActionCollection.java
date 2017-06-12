@@ -90,6 +90,7 @@ import net.sourceforge.squirrel_sql.client.session.action.IMainPanelTabAction;
 import net.sourceforge.squirrel_sql.client.session.action.IObjectTreeAction;
 import net.sourceforge.squirrel_sql.client.session.action.ISQLPanelAction;
 import net.sourceforge.squirrel_sql.client.session.action.ISessionAction;
+import net.sourceforge.squirrel_sql.client.session.action.ImportDataFromDBAction;
 import net.sourceforge.squirrel_sql.client.session.action.InQuotesAction;
 import net.sourceforge.squirrel_sql.client.session.action.NewAliasConnectionAction;
 import net.sourceforge.squirrel_sql.client.session.action.NewObjectTreeAction;
@@ -561,6 +562,7 @@ public class ActionCollection
 		add(new ShowNativeSQLAction(_app));
 		add(new SQLFilterAction(_app));
 		add(new EditWhereColsAction(_app));
+		add(new ImportDataFromDBAction(_app));
 		add(new TileAction(_app));
 		add(new TileHorizontalAction(_app));
 		add(new TileVerticalAction(_app));
