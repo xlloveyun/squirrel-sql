@@ -291,8 +291,8 @@ public class ImportDataFromDBDialog extends SessionDialogWidget {
 		JButton checkBtn = new JButton(s_stringMgr.getString("ImportDataFromDBDialog.check"));
 		checkBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
-				checkTable();
-				match();
+				if(checkTable())
+					match();
 			}
 
 		});
@@ -433,6 +433,11 @@ public class ImportDataFromDBDialog extends SessionDialogWidget {
 				if("跳过".equals(model.getValueAt(i, 1)))
 					continue;
 				map.put(model.getValueAt(i, 0),model.getValueAt(i, 1));
+			}
+			if(map.size()<=0)
+			{
+				JOptionPane.showMessageDialog(contentPane ,"请匹配两表字段", "警告",JOptionPane.WARNING_MESSAGE);
+				return false;
 			}
 			JSONObject json =new JSONObject();
 			prop.put("mapping",json.toJSONString(map));
